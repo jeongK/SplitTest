@@ -7,12 +7,12 @@
 //
 
 #import "ContainerViewController.h"
-
-#define TRAITLOG(trait) trait==UIUserInterfaceSizeClassCompact?@"C":@"R"
+#import "UITraitCollection+Info.h"
 
 @interface ContainerViewController ()
 
 @property (nonatomic, strong) UITraitCollection *customTrait;
+@property (nonatomic, strong) NSDictionary *traitInfo;
 
 @end
 
@@ -21,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.traitInfo = @{@"C|C" : @(YES) // 4,5,6 landscape
+                       , @"C|R" : @(YES) // 6+ landscape
+                       , @"R|C" : @(NO) // 4,5,6,6+ portrait
+                       , @"R|R" : @(YES)}; // pad
     
 }
 
@@ -32,14 +37,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
     
-    [self performTraitCollectionOverride];
+    [self performTraitCollectionOverride:self.traitCollection];
 }
 
 /*
@@ -54,23 +58,16 @@
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
-    [self performTraitCollectionOverride];
-    
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
-- (BOOL)isSplited {
-    
-    return YES;
-}
-
-- (void)performTraitCollectionOverride
+- (void)performTraitCollectionOverride:(UITraitCollection *)newCollection
 {
     self.customTrait = nil;
     
-    NSLog(@"<--- 1 : H : %@ | V : %@", TRAITLOG(self.traitCollection.horizontalSizeClass), TRAITLOG(self.traitCollection.verticalSizeClass));
+    BOOL splited = [self.traitInfo[newCollection.keyInfo] boolValue];
     
-    if (self.isSplited) {
+    if (splited) {
         self.customTrait = [UITraitCollection traitCollectionWithHorizontalSizeClass:UIUserInterfaceSizeClassRegular];
     }
     
@@ -81,11 +78,16 @@
     }
 }
 
+- (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
+ 
+    [self performTraitCollectionOverride:newCollection];
+    
+    [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
+}
+
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
     
     [super traitCollectionDidChange:previousTraitCollection];
-    
-    NSLog(@"<--- 2 : H : %@ | V : %@", TRAITLOG(self.traitCollection.horizontalSizeClass), TRAITLOG(self.traitCollection.verticalSizeClass));
 }
 
 @end

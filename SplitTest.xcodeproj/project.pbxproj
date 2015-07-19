@@ -17,6 +17,7 @@
 		81D35E4E1B5B9B7300E82AB4 /* SplitTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D35E4D1B5B9B7300E82AB4 /* SplitTestTests.m */; };
 		81D35E591B5B9C6400E82AB4 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D35E581B5B9C6400E82AB4 /* ContainerViewController.m */; };
 		81D35E5C1B5B9CAA00E82AB4 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D35E5B1B5B9CAA00E82AB4 /* SplitViewController.m */; };
+		81D35E5F1B5BABAF00E82AB4 /* UITraitCollection+Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D35E5E1B5BABAF00E82AB4 /* UITraitCollection+Info.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		81D35E581B5B9C6400E82AB4 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		81D35E5A1B5B9CAA00E82AB4 /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
 		81D35E5B1B5B9CAA00E82AB4 /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
+		81D35E5D1B5BABAF00E82AB4 /* UITraitCollection+Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITraitCollection+Info.h"; sourceTree = "<group>"; };
+		81D35E5E1B5BABAF00E82AB4 /* UITraitCollection+Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITraitCollection+Info.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				81D35E581B5B9C6400E82AB4 /* ContainerViewController.m */,
 				81D35E5A1B5B9CAA00E82AB4 /* SplitViewController.h */,
 				81D35E5B1B5B9CAA00E82AB4 /* SplitViewController.m */,
+				81D35E5D1B5BABAF00E82AB4 /* UITraitCollection+Info.h */,
+				81D35E5E1B5BABAF00E82AB4 /* UITraitCollection+Info.m */,
 			);
 			path = SplitTest;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			files = (
 				81D35E341B5B9B7200E82AB4 /* AppDelegate.m in Sources */,
 				81D35E5C1B5B9CAA00E82AB4 /* SplitViewController.m in Sources */,
+				81D35E5F1B5BABAF00E82AB4 /* UITraitCollection+Info.m in Sources */,
 				81D35E371B5B9B7200E82AB4 /* MasterViewController.m in Sources */,
 				81D35E311B5B9B7200E82AB4 /* main.m in Sources */,
 				81D35E3A1B5B9B7200E82AB4 /* DetailViewController.m in Sources */,
@@ -436,6 +442,7 @@
 				81D35E531B5B9B7300E82AB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81D35E541B5B9B7300E82AB4 /* Build configuration list for PBXNativeTarget "SplitTestTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +451,7 @@
 				81D35E561B5B9B7300E82AB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
