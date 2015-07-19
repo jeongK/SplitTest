@@ -44,6 +44,8 @@
 
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
     
+    // split 상태에서 split이 아닌 상태로 진입시 초기 화면을 master로 하는 경우 YES, detail하는 경우 NO로 설정한다.
+    
     if ([secondaryViewController isKindOfClass:[UINavigationController class]]
         && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]]
         && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
